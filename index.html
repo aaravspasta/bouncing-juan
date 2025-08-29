@@ -8,6 +8,24 @@
   </style>
 </head>
 <body>
-  <video src="bouncingjuan.mov" autoplay loop muted playsinline></video>
+  <video src="<video id="myVideo" src="myvideo.mp4" autoplay muted playsinline></video>
+<script>
+  const video = document.getElementById('myVideo');
+  const startTime = 10; // seconds (change to your desired start)
+  const endTime = 30;   // seconds (change to your desired end)
+
+  video.currentTime = startTime;
+  video.play();
+
+  video.addEventListener('timeupdate', function() {
+    if (video.currentTime >= endTime) {
+      video.currentTime = startTime;
+    }
+  });
+
+  video.addEventListener('loadedmetadata', function() {
+    video.currentTime = startTime;
+  });
+</script>" autoplay loop muted playsinline></video>
 </body>
 </html>
